@@ -101,11 +101,14 @@
           image: strict
 
     - name: Prune Docker containers
-      ansible.builtin.shell: 
-        cmd: docker container prune -f
+      ansible.builtin.shell:
+      cmd: |
+        docker container prune -f
       become: yes
+
 
     - name: Prune Docker images
       ansible.builtin.shell: 
-        cmd: docker image prune -af
+        cmd: |
+          docker image prune -af
       become: yes
