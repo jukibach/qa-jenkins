@@ -103,10 +103,10 @@
 
     - name: Prune Docker containers
       ansible.builtin.shell:
-        cmd: docker container prune -f
+        _raw_params: docker container prune -f
       become: yes
 
     - name: Prune Docker images
       ansible.builtin.shell:
-        cmd: docker image prune -af
+        _raw_params: docker image prune -af
       become: yes
