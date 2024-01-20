@@ -45,6 +45,7 @@
     - name: Create a docker network
       docker_network:
         name: test
+
     - name: Re-create a PostgreSQL container
       docker_container:
         name: jukibach-postgres
@@ -54,8 +55,8 @@
             aliases:
               - test
         env:
-          POSTGRESQL_ROOT_PASSWORD: 123456789
-          POSTGRESQL_DATABASE: university_management
+          POSTGRESQL_ROOT_PASSWORD: "123456789"
+          POSTGRESQL_DATABASE: "university_management"
         detach: true
         state: started
         recreate: yes
