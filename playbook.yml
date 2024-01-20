@@ -90,6 +90,10 @@
           - name: test
             aliases:
               - test
+        env:
+          POSTGRESQL_USERNAME: "postgres"
+          POSTGRESQL_PASSWORD: "123456789"
+          POSTGRESQL_HOST: "jukibach-postgres"
         state: started
         recreate: yes
         exposed_ports:
@@ -100,6 +104,8 @@
         pull: true
         comparisons:
           image: strict
+        depends_on:
+          - jukibach-postgres
 
     - name: Prune Docker containers
       shell:
