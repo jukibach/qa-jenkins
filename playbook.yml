@@ -101,7 +101,12 @@
         comparisons:
           image: strict
 
-    - name: Prune everything
-      community.docker.docker_prune:
-        containers: yes
-        images: yes
+    - name: Prune Docker containers
+      ansible.builtin.shell:
+        cmd: docker container prune -f
+      become: yes
+
+    - name: Prune Docker images
+      ansible.builtin.shell:
+        cmd: docker image prune -af
+      become: yes
