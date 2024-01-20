@@ -89,5 +89,5 @@
 
     - name: Prune everything
       community.docker.docker_prune:
-        containers: true
-        images: true
+        containers: yes
+        images: yes
