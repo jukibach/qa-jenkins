@@ -1,5 +1,7 @@
 - name: ec2instance-playbook
   hosts: host
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   become: yes
   become_user: root
   become_method: sudo
