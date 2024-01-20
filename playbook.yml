@@ -73,8 +73,6 @@
         dest: /home/ubuntu/script
         owner: ubuntu
         group: ubuntu
-    - name: SLEEP now !!!
-      shell: sleep 15 && sudo docker exec -u postgres -i jukibach-postgres postgres < script
 
     - name: Re-create a Spring container
       docker_container:
