@@ -55,8 +55,8 @@
             aliases:
               - test
         env:
-          POSTGRESQL_ROOT_PASSWORD: "123456789"
-          POSTGRESQL_DATABASE: "university_management"
+          POSTGRES_PASSWORD: "123456789"
+          POSTGRES_DB: "university_management"
         detach: true
         state: started
         recreate: yes
@@ -65,6 +65,7 @@
         pull: true
         comparisons:
           image: strict
+
     - name: Copy file with owner and permissions
       ansible.builtin.copy:
         src: ./script
