@@ -56,6 +56,7 @@
             aliases:
               - test
         env:
+          POSTGRES_USER: "postgres"
           POSTGRES_PASSWORD: "123456789"
           POSTGRES_DB: "university_management"
         detach: true
