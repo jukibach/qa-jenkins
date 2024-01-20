@@ -104,8 +104,6 @@
         pull: true
         comparisons:
           image: strict
-        depends_on:
-          - jukibach-postgres
 
     - name: Prune Docker containers
       shell:
