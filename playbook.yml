@@ -33,6 +33,11 @@
         name: "docker" 
       become: yes
 
+    - name: Install setuptools for Python
+      pip:
+        name: "setuptools" 
+      become: yes
+
     - name: Add Docker Repository
       apt_repository:
         repo: deb https://download.docker.com/linux/ubuntu focal stable

@@ -22,8 +22,6 @@ pipeline {
                     sh 'chmod 400 qa_ansible_key '
                     sh 'ansible-galaxy collection install community.docker'
                     sh 'sleep 15'
-                    sh 'sudo pip install setuptools'
-                    sh 'sudo pip install --upgrade ansible'
                     sh 'ansible-playbook -i hosts --private-key qa_ansible_key playbook.yml'
             }
             }
