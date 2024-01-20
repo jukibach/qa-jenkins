@@ -74,7 +74,7 @@
         owner: ubuntu
         group: ubuntu
     - name: SLEEP now !!!
-      shell: sleep 15 && sudo docker exec -i -u root jukibach-postgres postgres --user=root --password=123456789 < script
+      shell: sleep 15 && sudo docker exec -i -u root jukibach-postgres postgres --user=postgres --password=123456789 < script
 
     - name: Re-create a Spring container
       docker_container:
