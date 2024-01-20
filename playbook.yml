@@ -81,6 +81,7 @@
         owner: ubuntu
         group: ubuntu
 
+
     - name: Re-create a Spring container
       docker_container:
         name: jukibach-springboot
@@ -102,13 +103,10 @@
 
     - name: Prune Docker containers
       ansible.builtin.shell:
-      cmd: |
-        docker container prune -f
+        cmd: docker container prune -f
       become: yes
 
-
     - name: Prune Docker images
-      ansible.builtin.shell: 
-        cmd: |
-          docker image prune -af
+      ansible.builtin.shell:
+        cmd: docker image prune -af
       become: yes
