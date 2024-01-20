@@ -3,8 +3,6 @@
   become: yes
   become_user: root
   become_method: sudo
-  collections:
-    - community.docker
   tasks:
     - name: update
       apt:
