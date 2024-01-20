@@ -20,7 +20,7 @@ pipeline {
                     sh 'ansible --version'
                     sh 'ls -la'
                     sh 'chmod 400 qa_ansible_key '
-                    sh 'ansible-galaxy collection install -p community.docker collections'
+                    sh 'ansible-galaxy collection install community.docker'
                     sh 'sleep 15'
                     sh 'ansible-playbook -i hosts --private-key qa_ansible_key playbook.yml'
             }
